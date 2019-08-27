@@ -1,0 +1,31 @@
+{
+  "name": "calject/ding-robot",
+  "description": "钉钉机器人推送",
+  "homepage": "https://github.com/calject/ding-robot",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "沧澜",
+      "email": "lryhuimeng@163.com",
+      "homepage": "https://github.com/calject",
+      "role": "Developer"
+    }
+  ],
+  "keywords": [
+    "php",
+    "ding",
+    "dingding",
+    "robot",
+    "push"
+  ],
+  "require": {
+    "php": "^7.0",
+    "ext-json": "*",
+    "ext-curl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "CalJect\\DingRobot\\": "src"
+    }
+  }
+}
