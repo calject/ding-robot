@@ -22,6 +22,24 @@
     * [2. 消息拓展](#expand-2)
 
 
+
+### v1.1.0 新版自定义机器人`webhook`
+
+* 添加安全验证`加签`实现
+* `DingRobot __construct(string $token, string $signToken = null)`
+
+```
+# 原创建
+$robot = DingRobot::get('access_token');
+$robot = new DingRobot('access_token');
+
+# new
+$robot = DingRobot::get('access_token', 'signToken | null');
+$robot = new DingRobot('access_token', 'signToken | null');
+
+```
+
+
 ### <span id="introduce">一、介绍</span> [top](#dingrobot)
 
 钉钉机器人消息推送 简单封装
