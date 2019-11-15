@@ -32,7 +32,7 @@ class DPushFeedCard extends AbsPushData
     
     /**
      * @param array ...$args
-     * @return static
+     * @return void
      */
     protected function init(... $args)
     {

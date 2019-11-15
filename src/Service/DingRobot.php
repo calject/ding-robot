@@ -8,10 +8,13 @@
 
 namespace CalJect\DingRobot\Service;
 
-
 use CalJect\DingRobot\Contacts\IPush;
 use CalJect\DingRobot\Contacts\PushData\IPushData;
 
+/**
+ * Class DingRobot
+ * @package CalJect\DingRobot\Service
+ */
 class DingRobot implements IPush
 {
     /**
@@ -25,30 +28,38 @@ class DingRobot implements IPush
     protected $host = 'https://oapi.dingtalk.com/robot/send';
     
     /**
+     * 机器人access_token
      * @var string
      */
     protected $token;
     
     /**
+     * 加签token
+     * @var string
+     */
+    protected $signToken;
+    
+    /**
+     * 保留创建
      * DingRobot constructor.
      * @param string $token
+     * @param string $signToken
      */
-    public function __construct(string $token)
+    public function __construct(string $token, string $signToken = null)
     {
         $this->token = $token;
+        $this->signToken = $signToken;
     }
     
     /**
-     * 根据token获取机器人实例
-     * @param $token
+     * 根据token获取机器人实例[保存在静态数组中]
+     * @param string $token
+     * @param string $signToken
      * @return static
      */
-    public static function get($token)
+    public static function get(string $token, string $signToken = null)
     {
-        if (!($instance = &self::$robots[$token])) {
-            $instance = new static($token);
-        }
-        return $instance;
+        return self::$robots[$token] ?? self::$robots[$token] = new static($token, $signToken);
     }
     
     /**
@@ -79,7 +90,12 @@ class DingRobot implements IPush
      */
     public function push(IPushData $data)
     {
-        $host = $this->host.'?access_token='.$this->token;
+        $host = $this->host . '?access_token=' . $this->token;
+        if ($this->signToken) {
+            $micTime = time(). substr(microtime(), '2', 3);
+            $sign = base64_encode(hash_hmac('sha256', $micTime . "\n" . $this->signToken, $this->signToken, true));
+            $host .= "&timestamp={$micTime}&sign={$sign}";
+        }
         $push_data = json_encode($data->getData(), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         return $this->request($host, $push_data);
     }
