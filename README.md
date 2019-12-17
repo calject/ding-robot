@@ -100,7 +100,7 @@ $message->atAll();
 DingRobot::get('access_token')->push($message);
 ```
 
-![Image text](https://raw.githubusercontent.com/calject/ding-robot/master/resource/image/robot_at_all.png)
+![Image text](https://raw.githubusercontent.com/calject/resources/master/ding-robot/images/robot_at_all.png)
 
 * 示例2 @指定的人
 
@@ -112,18 +112,18 @@ $message = DPushText::make('这是一条测试消息');
 DingRobot::get('access_token')->push($message);
 ```
 
-![Image text](https://raw.githubusercontent.com/calject/ding-robot/master/resource/image/robot_at_mobile.png)
+![Image text](https://raw.githubusercontent.com/calject/resources/master/ding-robot/images/robot_at_mobile.png)
 
-![Image text](https://raw.githubusercontent.com/calject/ding-robot/master/resource/image/robot_at_mobile_more.png)
+![Image text](https://raw.githubusercontent.com/calject/resources/master/ding-robot/images/robot_at_mobile_more.png)
 
 2. `@所有人`文本显示与隐藏, 部分消息需要设置该参数以显示`@所有人`文本
 
 * 例`DPushMD`类型消息推送时设置`atAll()`,会@群内所有人，但是不显示`@所有人`的文本
 * 如果需要显示`@所有人`文本，需要额外设置`isShowAtAll(true)`参数
 
-![Image text](https://raw.githubusercontent.com/calject/ding-robot/master/resource/image/robot_md_at_all.png)
+![Image text](https://raw.githubusercontent.com/calject/resources/master/ding-robot/images/robot_md_at_all.png)
 
-![Image text](https://raw.githubusercontent.com/calject/ding-robot/master/resource/image/robot_md_at_mobile.png)
+![Image text](https://raw.githubusercontent.com/calject/resources/master/ding-robot/images/robot_md_at_mobile.png)
 
 #### <span id="usage-4.2">4.2 api各类型消息推送使用说明</span>
 
@@ -135,7 +135,7 @@ DingRobot::get('access_token')->push($message);
 ```
 * 推送示例
 
-![Image text](https://raw.githubusercontent.com/calject/ding-robot/master/resource/image/robot_text_message.png)
+![Image text](https://raw.githubusercontent.com/calject/resources/master/ding-robot/images/robot_text_message.png)
 
 ##### <span id="usage-4.2.2">2. 推送`markdown`消息</span>
 
