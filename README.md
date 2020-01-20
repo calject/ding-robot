@@ -167,7 +167,7 @@ DingRobot::get('access_token')->push($message);
 ```
 * 推送示例
 
-![Image text](https://raw.githubusercontent.com/calject/ding-robot/raw/master/resource/image/robot_md_message.png)
+![Image text](https://raw.githubusercontent.com/calject/resources/master/ding-robot/images/robot_md_message.png)
 
 ##### <span id="usage-4.2.3">3. 推送`ActionCard`类型消息(一)</span>
 
@@ -188,11 +188,11 @@ DingRobot::get('access_token')->push($message);
 
 * 横向排列示例 `$message->setBtnOrientation(DPushActionCard::BTN_ORIENTATION_HORIZONTAL);`
 
-![Image text](https://raw.githubusercontent.com/calject/ding-robot/raw/master/resource/image/robot_btn_list_horizontal.png)
+![Image text](https://raw.githubusercontent.com/calject/resources/master/ding-robot/images/robot_btn_list_horizontal.png)
 
 * 竖直排列示例 `$message->setBtnOrientation(DPushActionCard::BTN_ORIENTATION_VERTICAL);`
 
-![Image text](https://raw.githubusercontent.com/calject/ding-robot/raw/master/resource/image/robot_btn_list_vertical.png)
+![Image text](https://raw.githubusercontent.com/calject/resources/master/ding-robot/images/robot_btn_list_vertical.png)
 
 ##### <span id="usage-4.2.4">4. 推送`ActionCard`类型消息(二)</span>
 
@@ -210,7 +210,7 @@ DingRobot::get('access_token')->push($message);
 
 * 推送示例
 
-![Image text](https://raw.githubusercontent.com/calject/ding-robot/raw/master/resource/image/robot_action_card.png)
+![Image text](https://raw.githubusercontent.com/calject/resources/master/ding-robot/images/robot_action_card.png)
 
 ##### <span id="usage-4.2.5">5. 推送`link`类型消息</span>
 
@@ -225,7 +225,7 @@ DingRobot::get('access_token')->push($message);
 
 * 推送示例
 
-![Image text](https://raw.githubusercontent.com/calject/ding-robot/raw/master/resource/image/robot_link.png)
+![Image text](https://raw.githubusercontent.com/calject/resources/master/ding-robot/images/robot_link.png)
 
 ##### <span id="usage-4.2.6">6. 推送`FeedCard`类型消息</span>
 
@@ -241,7 +241,7 @@ DingRobot::get('access_token')->push($message);
 
 * 推送示例
 
-![Image text](https://raw.githubusercontent.com/calject/ding-robot/raw/master/resource/image/robot_feed_card.png)
+![Image text](https://raw.githubusercontent.com/calject/resources/master/ding-robot/images/robot_feed_card.png)
 
 
 ### <span id="expand">五、拓展</span> [top](#dingrobot)
@@ -262,4 +262,4 @@ $exception = new \Exception('这是一条异常消息', 500);
 $message = DPushException::make($exception);
 DingRobot::get('access_token')->push($message);
 ```
-![Image text](https://raw.githubusercontent.com/calject/ding-robot/raw/master/resource/image/robot_custom_message.png)
+![Image text](https://raw.githubusercontent.com/calject/resources/master/ding-robot/images/robot_custom_message.png)
